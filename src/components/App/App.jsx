@@ -1,20 +1,34 @@
+// React and axios
+
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+
+// Hooks
+
+import { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+// Importing other files
+
+import './App.css';
 import PizzaList from '../PizzaList/PizzaList';
 import PizzaCart from '../PizzaCart/PizzaCart';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import ThankYou from '../ThankYou/ThankYou';
+import Admin from '../Admin/Admin';
+import home from './homeicon.svg';
+import cart from './shoppingcart.svg'
 
 function App() {
+  const [newOrder, setNewOrder] = useState([])
+
 
   return (
     <Router>
       <nav id='navbar'>
-        <h3><Link to='/'>Home</Link></h3>
-        <h3><Link to='/menu'>Menu</Link></h3>
-        <h3><Link to='/cart'>Cart</Link></h3>
+        <h3><Link to='/'><img id = 'home-icon' src={home}></img></Link></h3>
+        <h3 id='menu-nav'><Link to='/menu'>MENU</Link></h3>
+        <h3><Link to='/cart'><img id = 'cart-icon' src={cart}></img></Link></h3>
       </nav>
       <Switch>
         <Route path='/' exact>
@@ -33,12 +47,13 @@ function App() {
           <PizzaList />
         </Route>
         <Route path='/checkout'>
-          <CustomerForm />
+          <CustomerForm setNewOrder={setNewOrder}/>
         </Route>
         <Route path='/thankyou'>
           <ThankYou />
         </Route>
       </Switch>
+      {/* <Admin setNewOrder={setNewOrder}/> */}
     </Router>
   );
 }

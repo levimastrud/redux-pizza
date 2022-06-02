@@ -3,11 +3,11 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-function CustomerForm() {
+function CustomerForm({setNewOrder}) {
 
     const history = useHistory();
 
-    const [newOrder, setNewOrder] = useState([])
+    
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
@@ -21,7 +21,7 @@ function CustomerForm() {
                 setNewOrder(response.data)
             }).catch(err => console.log('In GET', err));
     }
-
+    
     useEffect(() => {
         getOrders();
     }, [])
@@ -45,7 +45,7 @@ function CustomerForm() {
             }]
         }
         axios.post('/api/order/', order)
-            .then(reponse => {
+            .then(response => {
                 console.log('In POST order');
                 getOrders();
             }).catch(err => console.log('ERROR in POST order', err));

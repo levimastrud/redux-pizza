@@ -13,6 +13,16 @@
   font-size: 2em;
 }
 
+#cart-icon, #home-icon {
+  height: 1em;
+  fill: white;
+  filter: invert(91%) sepia(100%) saturate(23%) hue-rotate(302deg) brightness(110%) contrast(101%);;
+}
+
+#menu-nav {
+  letter-spacing: 5px;
+}
+
 #navbar {
   display: flex;
   justify-content:space-between;
