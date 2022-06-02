@@ -12,4 +12,10 @@ router.get('/menu', (req, res) => {
     });
 })
 
+// router.post('/cart', (req, res) => {
+//     console.log('in cart');
+//     let queryText = 'INSERT INTO "line_item" ("pizza_id", "quantity") VALUES ($1, $2)';
+//     pool.query(queryText, [])
+// })
+
 module.exports = router;

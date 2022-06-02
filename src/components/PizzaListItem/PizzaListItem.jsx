@@ -19,10 +19,13 @@ function PizzaListItem({ pizza }) {
                 </thead>
                 <tbody id='pizza-info'>
                     <tr>
+                        <td className='description'>{pizza.description}</td>
+                    </tr>
+                    <tr>
                         <td><img src={pizza.image_path}></img></td>
                     </tr>
                     <tr>
-                        <td>${pizza.price}</td>
+                        <td>${Number(pizza.price).toFixed(2)}</td>
                     </tr>
                     <tr>
                         <td>

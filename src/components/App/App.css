@@ -3,10 +3,9 @@
 }
 
 .App-header {
-  background-color: #222;
   height: 70px;
   padding: 20px;
-  color: white;
+  color: #222;
   margin-bottom: 20px;
 }
 
@@ -18,18 +17,34 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  width: 100%;
   background-color: #222;
+  position: sticky;
+  top: 0;
 }
 
 #navbar h3 {
-  background-color: #222;
-  color: rgb(255, 255, 255);
-  border: 1.5px solid rgb(255, 255, 255);
-  border-radius: 2px;
-  padding: .5em;
-  margin: 1em 1em 1em 1em;
+  position: relative;
+  color: #ffffff;
   user-select: none;
+  margin: 1em;
+}
+
+#navbar h3:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#navbar h3:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* PIIZA LIST ITEM */
@@ -47,10 +62,16 @@
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  width: 25em;
+  text-align: center;
 }
 
 #pizza-info img{
-  height: 15em;
+  width: 25em;
+}
+
+#pizza-info .description {
+  opacity: 70%;
 }
 
 #pizza-info button{
@@ -68,6 +89,10 @@
   color: #222;
 }
 
+#updated-price {
+  display: none;
+}
+
 /* Gets rid of ugly link styling */
 
 a,
@@ -76,4 +101,55 @@ a:hover,
 a:active {
   color: inherit;
   text-decoration: none;
+}
+
+#customerForm {
+
+}
+
+#customerForm .inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#customerForm input {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  background-color: rgb(235, 245, 255);
+  border: 1px solid gray;
+}
+
+#customerForm button {
+  margin: 1em 0 0 1em;
+  border-radius: 2px;
+  border: 1px solid #222;
+  background-color: #222;
+  color: rgb(255, 255, 255);
+}
+
+#customerForm button:hover{
+  border: 1px solid #222;
+  background-color: rgb(255, 255, 255);
+  color: #222;
+}
+
+.checkout {
+  margin: 1em;
+}
+
+/* CART */
+
+.cart img {
+  width: 10em;
+}
+
+.cart {
+  margin: 2em 0 0 1em;
+}
+
+/* RECEIPT */
+
+.receipt {
+  margin: 1em;
 }

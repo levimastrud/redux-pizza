@@ -20,8 +20,15 @@ const pizzaReducer = (state = [], action) => {
 const cart = (state = [], action) => {
     if (action.type === 'ADD') {
         return [...state, action.payload]
-    } else if (action.type === 'SUBTRACT') {
-        return state - 1;
+    } else if (action.type === 'CLEAR') {
+        return [];
+    }
+    return state;
+}
+
+const total = (state = 0, action) => {
+    if(action.type === 'TOTALIZE'){
+        return action.payload;
     }
     return state;
 }
@@ -29,7 +36,8 @@ const cart = (state = [], action) => {
 const storeInstance = createStore(
     combineReducers({
         pizzaReducer,
-        cart
+        cart,
+        total
     }),
     applyMiddleware(logger)
 )
