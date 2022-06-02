@@ -13,3 +13,67 @@
 .App-title {
   font-size: 2em;
 }
+
+#navbar {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #222;
+}
+
+#navbar h3 {
+  background-color: #222;
+  color: rgb(255, 255, 255);
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  padding: .5em;
+  margin: 1em 1em 1em 1em;
+  user-select: none;
+}
+
+/* PIIZA LIST ITEM */
+
+#pizza-table {
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pizza-info {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pizza-info img{
+  height: 15em;
+}
+
+#pizza-info button{
+  margin: .5em .5em 0 .5em;
+  border: 1px solid transparent;
+  background-color: #222;
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+#pizza-info button:hover{
+  border: 1px solid #222;
+  background-color: rgb(255, 255, 255);
+  color: #222;
+}
+
+/* Gets rid of ugly link styling */
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
