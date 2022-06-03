@@ -21,17 +21,18 @@ function PizzaCart() {
 
     return (
         <div>
-            {store.map((pizza) => {
+            {store ? store.map((pizza) => {
                 return (
                     
                         <div className = "cart" key={pizza.id}>
                             <h3 >{pizza.name}</h3>
                             <img src={pizza.image_path}></img>
+                            <hr/>
                         <span id='updated-price'>{total += Number(pizza.price)}</span>
                         </div>
                     
                 )
-            })}
+            }): <h1>Nothing in cart</h1>}
             {/* <CustomerForm total={total}/> */}
             <h3 className='cart'>Total is:${total.toFixed(2)}</h3>
             <button className = 'cart'onClick={goToForm}>Checkout</button>

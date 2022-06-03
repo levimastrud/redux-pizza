@@ -47,9 +47,11 @@ body button:hover{
   display: flex;
   justify-content:space-between;
   align-items: center;
-  background-color: #222;
+  background-color: rgb(141, 41, 41);
   position: sticky;
   top: 0;
+  width: 100%;
+
 }
 
 #navbar h3 {
@@ -79,13 +81,34 @@ body button:hover{
 
 /* HOME PAGE */
 
+#pizza {
+  position: fixed;
+  height: 90em;
+  bottom: 1em;
+  z-index: -1;
+  opacity: 4%;
+  left: 30em;
+}
+
 .App h1 {
   font-size: 5em;
   font-family:cursive;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: .5em;
+  text-align: center;
+}
+
+.app {
+  overflow: hidden;
 }
 
 .home p, .home img{
-  width: 35em;
+  max-width: 35em;
+  min-width: none;
 }
 
 .home img {
@@ -93,6 +116,7 @@ body button:hover{
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +145,8 @@ body button:hover{
 
 #pizza-info img{
   width: 20em;
+  -webkit-box-shadow: 2px 6px 22px 8px rgba(0,0,0,0.35); 
+  box-shadow: 2px 6px 22px 8px rgba(0,0,0,0.35);
 }
 
 #pizza-info .description {

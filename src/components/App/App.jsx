@@ -17,7 +17,8 @@ import CustomerForm from '../CustomerForm/CustomerForm';
 import ThankYou from '../ThankYou/ThankYou';
 import Admin from '../Admin/Admin';
 import home from './homeicon.svg';
-import cart from './shoppingcart.svg'
+import cart from './shoppingcart.svg';
+import pizza from './pizza.svg';
 
 function App() {
   const [newOrder, setNewOrder] = useState([])
@@ -32,6 +33,7 @@ function App() {
       </nav>
       <Switch>
         <Route path='/' exact>
+          <img id = 'pizza' src={pizza}></img>
           <div className='App'>
             <header className='App-header'>
               <h1 className='App-title'>Pop's Prison of Pizza</h1>
