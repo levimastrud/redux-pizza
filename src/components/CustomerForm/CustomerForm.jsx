@@ -29,6 +29,7 @@ function CustomerForm({setNewOrder}) {
     let total = useSelector(store => store.total)
     const store = useSelector(store => store.cart)
     const addOrder = (e) => {
+
         let order = {
             customer_name: name,
             street_address: address,
@@ -44,6 +45,11 @@ function CustomerForm({setNewOrder}) {
                 quantity: 2
             }]
         }
+        
+        if (order.type === 'delivery') {
+            total += 10;
+        }
+
         axios.post('/api/order/', order)
             .then(response => {
                 console.log('In POST order');

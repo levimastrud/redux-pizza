@@ -7,6 +7,9 @@ function PizzaListItem({ pizza }) {
     const addPizza = () => {
         console.log('Adding to cart', pizza)
         dispatch({type: 'ADD', payload: pizza})
+        let cart = document.getElementById('cart-icon');
+        cart.classList.add('added');
+        setTimeout(() => cart.classList.remove('added'), 1000)
     }
 
     return (

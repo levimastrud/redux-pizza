@@ -34,10 +34,19 @@ function App() {
         <Route path='/' exact>
           <div className='App'>
             <header className='App-header'>
-              <h1 className='App-title'>Prime Pizza</h1>
+              <h1 className='App-title'>Pop's Prison of Pizza</h1>
             </header>
+            <div className='wrapper'>
+            <div className='home'>
             <img src='https://media.istockphoto.com/photos/dog-and-cat-eating-pizza-picture-id1153896890?k=20&m=1153896890&s=612x612&w=0&h=MQurVtot6xx-zzs-cbtWG7TLvi1OPBjO8LppnjWNKFk=' />
-            <p>Our founders</p>
+            <p><i>Our founders</i></p>
+            <p>Back in 1929 our founders, Pops the dog and Pammy the cat, wanted to support the community during the Great Depression.
+              They came up with original recipes of pizza to put a smile on <strong>everyone's</strong> face. Starting from the 
+              <em>"Over The Rainbow"</em> pizza to the world famous <em>"Pepperoni"</em> pizza with only one pepperoni. We have conitinued to carry on
+              their legacy to keep giving back with one amazing pizza at a time.
+            </p>
+            </div>
+            </div>
           </div>
         </Route>
         <Route path='/cart'>
@@ -50,10 +59,12 @@ function App() {
           <CustomerForm setNewOrder={setNewOrder}/>
         </Route>
         <Route path='/thankyou'>
-          <ThankYou />
+          <ThankYou newOrder={newOrder}/>
         </Route>
+      <Route path='/Admin'>
+      <Admin newOrder={newOrder} setNewOrder={setNewOrder}/>
+      </Route>
       </Switch>
-      {/* <Admin setNewOrder={setNewOrder}/> */}
     </Router>
   );
 }

@@ -13,6 +13,26 @@
   font-size: 2em;
 }
 
+body {
+  color: #222;
+}
+
+body button{
+  margin: .5em .5em 0 .5em;
+  border: 1px solid transparent;
+  background-color: #222;
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+
+body button:hover{
+  border: 1px solid #222;
+  background-color: rgb(255, 255, 255);
+  color: #222;
+}
+
 #cart-icon, #home-icon {
   height: 1em;
   fill: white;
@@ -57,27 +77,50 @@
   transform-origin: bottom left;
 }
 
+/* HOME PAGE */
+
+.App h1 {
+  font-size: 5em;
+  font-family:cursive;
+}
+
+.home p, .home img{
+  width: 35em;
+}
+
+.home img {
+  margin-top: 5em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* PIIZA LIST ITEM */
 
 #pizza-table {
   margin-top: 3em;
-  display: flex;
-  justify-content: space-around;
+  display: inline-flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
 
 #pizza-info {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 25em;
+  width: 20em;
+  margin: 2em;
   text-align: center;
 }
 
+
 #pizza-info img{
-  width: 25em;
+  width: 20em;
 }
 
 #pizza-info .description {
@@ -92,6 +135,7 @@
   padding: 8px;
   border-radius: 2px;
 }
+
 
 #pizza-info button:hover{
   border: 1px solid #222;
@@ -111,10 +155,6 @@ a:hover,
 a:active {
   color: inherit;
   text-decoration: none;
-}
-
-#customerForm {
-
 }
 
 #customerForm .inputs{
@@ -163,3 +203,43 @@ a:active {
 .receipt {
   margin: 1em;
 }
+
+/* ADMIN */
+
+
+.customer-table{
+/* margin-top: 3em; */
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+.customer-info{
+  margin: 1em;
+}
+
+.customer-table tr{
+  margin: 2em;
+}
+
+.customer-table th{
+  padding: 1.5em;
+}
+
+.added{
+  animation: added 1s ease-in-out 0s 1 alternate;
+}
+
+@keyframes added {
+  0% {
+      transform: scale(1.0);
+  }
+  50% {
+      transform: scale(2.0);
+  }
+  100% {
+    transform: scale(1.0);
+}
+}
+

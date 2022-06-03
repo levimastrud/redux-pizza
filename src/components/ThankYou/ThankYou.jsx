@@ -5,7 +5,12 @@ function ThankYou() {
 
     let store = useSelector(store => store.cart);
     let total = useSelector(store => store.total);
+    const dispatch = useDispatch();
     const history = useHistory();
+    const clickHandler = () =>{
+        dispatch({type: 'CLEAR'});
+        history.push('/');
+    }
 
     return (
         <>
@@ -19,6 +24,7 @@ function ThankYou() {
 
                             <div key={pizza.id}>
                                 <h3 >{pizza.name}</h3>
+                                <h3>{pizza.price}</h3>
                             </div>
 
                         )
@@ -26,7 +32,7 @@ function ThankYou() {
                     <hr />
                     <h3>Total is:${total.toFixed(2)}</h3>
                 </div>
-                <button onClick={() => history.push('/')}>Back to home</button>
+                <button onClick={() => clickHandler()}>Back to home</button>
             </div>
         </>
     )
